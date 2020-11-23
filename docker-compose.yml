@@ -1,0 +1,13 @@
+version: '3.8'
+x-build: &build
+  build:
+    context: .
+    args:
+      PROTECTOR4J_VERSION: ${PROTECTOR4J_VERSION}
+services:
+  protector4j:
+    <<: *build
+    image: inaccel/protector4j
+  version:
+    <<: *build
+    image: inaccel/protector4j:${PROTECTOR4J_VERSION}
